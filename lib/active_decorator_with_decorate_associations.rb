@@ -1,0 +1,2 @@
+require "active_decorator_with_decorate_associations/version"
+require "active_decorator_with_decorate_associations/railtie"
