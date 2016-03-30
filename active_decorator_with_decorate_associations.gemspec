@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.author        = "Tatsuya Itakura"
   spec.email         = "itkrt2y.591721200@gmail.com"
 
-  spec.summary       = "active_decorator extension to decorate associated models "
+  spec.summary       = "active_decorator extension to decorate associated models"
   spec.description   = "Enable active_decorator to automatically decorate associated models"
   spec.homepage      = "https://github.com/itkrt2y/active_decorator_with_decorate_associations"
   spec.license       = "MIT"
