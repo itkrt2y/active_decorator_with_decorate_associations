@@ -1,10 +1,14 @@
 require "rails"
+require "active_decorator"
 require "active_decorator_with_decorate_associations/collection_association_decorator"
 require "active_decorator_with_decorate_associations/association_decorator"
+require "active_decorator_with_decorate_associations/active_decorator_extension"
 
 module ActiveDecoratorWithDecorateAssociations
   class Railtie < ::Rails::Railtie
     initializer 'active_decorator_with_decorate_associations' do
+      ActiveDecorator::Decorator.send :prepend, ActiveDecoratorExtension
+
       ActiveRecord::Associations::CollectionAssociation.send :prepend, CollectionAssociationDecorator
       ActiveRecord::Associations::BelongsToAssociation.send  :prepend, AssociationDecorator
       ActiveRecord::Associations::HasOneAssociation.send     :prepend, AssociationDecorator
