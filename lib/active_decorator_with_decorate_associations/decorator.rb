@@ -4,9 +4,12 @@ module ActiveDecoratorWithDecorateAssociations
   class Decorator
     include Singleton
 
-    def decorate(target)
-      ActiveDecorator::Decorator.instance.decorate(target)
-      target
+    def decorate(owner, target)
+      if owner.is_a?(ActiveDecorator::Helpers)
+        ActiveDecorator::Decorator.instance.decorate(target)
+      else
+        target
+      end
     end
   end
 end

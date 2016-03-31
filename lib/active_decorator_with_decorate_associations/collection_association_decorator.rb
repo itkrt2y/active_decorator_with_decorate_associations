@@ -5,13 +5,13 @@ module CollectionAssociationDecorator
   if Gem::Version.new(Rails.version) < Gem::Version.new("4.1")
 
     def first_or_last(*args)
-      ActiveDecoratorWithDecorateAssociations::Decorator.instance.decorate(super)
+      ActiveDecoratorWithDecorateAssociations::Decorator.instance.decorate(owner, super)
     end
 
   else
 
     def first_nth_or_last(*args)
-      ActiveDecoratorWithDecorateAssociations::Decorator.instance.decorate(super)
+      ActiveDecoratorWithDecorateAssociations::Decorator.instance.decorate(owner, super)
     end
 
   end
