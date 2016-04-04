@@ -1,7 +1,7 @@
 require 'test_helper'
 
-class ActiveDecoratorWithDecorateAssociationsTest < Minitest::Test
-  def test_that_it_has_a_version_number
-    refute_nil ::ActiveDecoratorWithDecorateAssociations::VERSION
+class ActiveDecoratorWithDecorateAssociationsTest < Test::Unit::TestCase
+  test 'it_has_a_version_number' do
+    assert !::ActiveDecoratorWithDecorateAssociations::VERSION.nil?
   end
 end
