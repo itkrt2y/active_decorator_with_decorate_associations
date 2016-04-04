@@ -1,0 +1,5 @@
+<% @books.each do |book| %>
+  <%= book.author.capitalized_name %>
+  <%= book.title %>
+  <%= book.reverse_title %>
+<% end %>
