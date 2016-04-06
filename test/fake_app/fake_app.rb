@@ -42,11 +42,13 @@ ActiveDecoratorTestApp::Application.routes.draw do
     end
   end
   resources :movies, only: :show
+  resources :documents, only: :show
 end
 
 # models
 class Author < ActiveRecord::Base
   has_many :books
+  has_many :documents
 end
 class Book < ActiveRecord::Base
   belongs_to :author
@@ -54,6 +56,12 @@ end
 class Novel < Book
 end
 class Movie < ActiveRecord::Base
+end
+
+# additional model
+# this model doesn't have decorator
+class Document < ActiveRecord::Base
+  belongs_to :author
 end
 
 # helpers
@@ -163,6 +171,12 @@ class MoviesController < ApplicationController
     @movie = Movie.find params[:id]
   end
 end
+# additional controller
+class DocumentsController < ApplicationController
+  def show
+    @document = Document.find params[:id]
+  end
+end
 
 # mailers
 class BookMailer < ActionMailer::Base
@@ -178,6 +192,7 @@ class CreateAllTables < ActiveRecord::Migration
     create_table(:authors) { |t| t.string :name }
     create_table(:books) { |t| t.string :title; t.references :author; t.string :type }
     create_table(:movies) { |t| t.string :name }
+    create_table(:documents) { |t| t.string :title; t.references :author }
   end
 end
 

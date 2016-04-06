@@ -69,4 +69,13 @@ class ControllerIvarTest < ActionDispatch::IntegrationTest
     # additional test
     assert page.has_content? 'matz'.capitalize
   end
+
+  # additional test
+  test 'decorating model association even if owner is not decorated' do
+    @document = @matz.documents.create! title: "ruby performance optimization"
+
+    visit "/documents/#{@document.id}"
+
+    assert page.has_content? 'matz'.capitalize
+  end
 end
