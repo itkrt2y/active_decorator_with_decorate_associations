@@ -1,7 +1,3 @@
-# TODO remove this class when merged either of these pull requests
-# https://github.com/amatsuda/active_decorator/pull/15
-# https://github.com/amatsuda/active_decorator/pull/59
-
 require "active_decorator_with_decorate_associations/marker"
 
 module ActiveDecoratorExtension
@@ -12,6 +8,10 @@ module ActiveDecoratorExtension
     super
 
     obj.extend ActiveDecoratorWithDecorateAssociations::Marker if obj.is_a?(ActiveRecord::Base)
+
+    # TODO remove next line when merged either of these pull requests
+    # https://github.com/amatsuda/active_decorator/pull/15
+    # https://github.com/amatsuda/active_decorator/pull/59
     obj
   end
 end
