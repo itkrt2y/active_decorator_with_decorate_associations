@@ -1,3 +1,9 @@
+# Deprecated
+
+This gem is deprecated.
+
+Please use active_decorator v0.9.0 or higher.
+
 # ActiveDecoratorWithDecorateAssociations [![Build Status](https://travis-ci.org/itkrt2y/active_decorator_with_decorate_associations.svg?branch=master)](https://travis-ci.org/itkrt2y/active_decorator_with_decorate_associations)
 
 Enable active_decorator to automatically decorate associated models
